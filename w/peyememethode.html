@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CachBin | تأكيد طلب الشحن والدفع</title>
+    
+    <title>اشحن Binance، Exness، وSkrill مباشرة من حسابك البنكي المغربي عبر CachBin</title>
+    <meta name="description" content="واش أنت متداول، مستثمر، أو كتحتاج تشحن حساباتك الدولية من المغرب وكتعاني مع التعقيدات؟ CachBin هو الحل الأمثل اللي كيختصر عليك الطريق. حنا منصة مغربية رائدة متخصصة في تحويل الأموال وشحن الأرصدة الرقمية بشكل فوري، آمن، وموثوق. علاش CachBin هو الخيار رقم 1 في المغرب؟ شحن شامل للمنصات العالمية: سواء كنت محتاج تشحن حساب Binance، Exness، Bybit، أو منصات التداول والعملات الرقمية الأخرى، حنا كنغطيو احتياجاتك كاملة. دعم كامل للمحافظ الإلكترونية: كنضمنو ليك تعبئة رصيدك في PayPal، Wise، Skrill، Payoneer، Redotpay، و Volet Advcash في أسرع وقت. توافق مع جميع البنوك المغربية: مابقيتيش محتاج تحول عملة صعبة. يمكنك إتمام عملية الشحن مباشرة من حسابك البنكي المحلي: CIH Bank، التجاري وفا بنك، البريد بنك (Albarid Bank)، كاش بليس (Cash Plus)، البنك الشعبي، BMCE، وغيرها. تنوع العملات الرقمية: بغيتي تشحن بـ Tether (USDT)، Tron (TRX)، Solana (SOL)، Toncoin، BNB، XRP، Dogecoin، أو Shiba Inu؟ كل هاد العملات متوفرة لضمان مرونة أكبر في تعاملاتك. عملية مبسطة ومؤمنة: صممنا المنصة باش تكون سهلة. كتحول المبلغ للـ RIB أو الحساب ديالنا، كترفع صورة الإثبات، والرصيد ديالك كيوصلك فدقائق. كيفاش تبدا؟ 1 اختار المنصة أو العملة: حدد فين بغيتي تشحن (Binance، Skrill، إلخ). 2 اختار البنك ديالك: حدد الوسيلة البنكية اللي غتخلص منها (CIH، التجاري، إلخ). 3 أكد العملية: صيفط المبلغ، ارفع صورة التحويل، وتوصل بالرصيد ديالك فوراً. انضم لآلاف المستخدمين اللي كيثيقوا في CachBin كشريكهم اليومي في عالم المال الرقمي.">
+
     <script src="https://cdn.tailwindcss.com"></script>
     <link class="rtl" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -492,14 +495,10 @@
                         window.location.href = "../index.html";
                     }
                 );
-            })
-            .catch(error => {
-                console.error(error);
-                document.getElementById('submitBtn').disabled = false;
-                showCustomModal('error', 'فشل حفظ البيانات', 'تم رفع الصورة ولكن لم نتمكن من تسجيل الطلب في الشيت، المرجو المحاولة لاحقاً أو الاتصال بالدعم.');
             });
         }
 
+        // تشغيل الدالات الأساسية عند تحميل الصفحة
         window.onload = function() {
             getUrlData();
             setupBanksGrid();
