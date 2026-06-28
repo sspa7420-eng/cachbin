@@ -1,435 +1,508 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl"> 
+<html lang="ar" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title>cachbin.com: شحن محفظتك الرقمية ببساطة من بنكك المغربي.</title>
-    
-    <meta name="description" content="واش كتقلب على أسرع وأسهل طريقة تشحن بها محفظتك الرقمية؟ cachbin.com هنا باش يتهنى ليك البال. وفرنا ليك خدمة مغربية 100% كتخليك تحول الأموال من البنك ديالك (CIH، التجاري، الشعبي، وغيرها) للرصيد اللي محتاج في دقايق. اختاريتينا حيت حنا كنفهمو الحاجة ديالك للسرعة، الثقة، والتعامل البسيط اللي كيناسب البنوك اللي كتستعمل يومياً. جرب السهولة ديالنا دابا!">
-    
-    <link rel="icon" type="image/png" href="favicon.png">
-    
+    <title>اشحن Binance، Exness، وSkrill مباشرة من حسابك البنكي المغربي عبر CachBin</title>
+    <meta name="description" content="واش أنت متداول، مستثمر، أو كتحتاج تشحن حساباتك الدولية من المغرب وكتعاني مع التعقيدات؟ CachBin هو الحل الأمثل اللي كيختصر عليك الطريق. حنا منصة مغربية رائدة متخصصة في تحويل الأموال وشحن الأرصدة الرقمية بشكل فوري، آمن، وموثوق. علاش CachBin هو الخيار رقم 1 في المغرب؟ شحن شامل للمنصات العالمية: سواء كنت محتاج تشحن حساب Binance، Exness، Bybit، أو منصات التداول والعملات الرقمية الأخرى، حنا كنغطيو احتياجاتك كاملة. دعم كامل للمحافظ الإلكترونية: كنضمنو ليك تعبئة رصيدك في PayPal، Wise، Skrill، Payoneer، Redotpay، و Volet Advcash في أسرع وقت. توافق مع جميع البنوك المغربية: مابقيتيش محتاج تحول عملة صعبة. يمكنك إتمام عملية الشحن مباشرة من حسابك البنكي المحلي: CIH Bank، التجاري وفا بنك، البريد بنك (Albarid Bank)، كاش بليس (Cash Plus)، البنك الشعبي، BMCE، وغيرها. تنوع العملات الرقمية: بغيتي تشحن بـ Tether (USDT)، Tron (TRX)، Solana (SOL)، Toncoin، BNB، XRP، Dogecoin، أو Shiba Inu؟ كل هاد العملات متوفرة لضمان مرونة أكبر في تعاملاتك. عملية مبسطة ومؤمنة: صممنا المنصة باش تكون سهلة. كتحول المبلغ للـ RIB أو الحساب ديالنا، كترفع صورة الإثبات، والرصيد ديالك كيوصلك فدقائق. كيفاش تبدا؟ 1 اختار المنصة أو العملة: حدد فين بغيتي تشحن (Binance، Skrill، إلخ). 2 اختار البنك ديالك: حدد الوسيلة البنكية اللي غتخلص منها (CIH، التجاري، إلخ). 3 أكد العملية: صيفط المبلغ، ارفع صورة التحويل، وتوصل بالرصيد ديالك فوراً. انضم لآلاف المستخدمين اللي كيثيقوا في CachBin كشريكهم اليومي في عالم المال الرقمي.">
+
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link class="rtl" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
     <style>
-        body { 
-            font-family: 'Tajawal', sans-serif; 
-            /* تم تحديث رابط الخلفية هنا بالرابط الجديد الشغال والمباشر */
-            background: linear-gradient(rgba(248, 249, 253, 0.92), rgba(248, 249, 253, 0.92)), url('https://i.postimg.cc/mg3BhdRx/4838e73b-42e4-4824-902c-e23e40855e20.jpg') no-repeat center center fixed !important;
-            background-size: cover !important;
-        }
-        input::-webkit-outer-spin-button,
-        input::-webkit-inner-spin-button {
-            -webkit-appearance: none;
-            margin: 0;
-        }
-        input[type=number] {
-            -moz-appearance: textfield;
-        }
-        select {
-            -webkit-appearance: none;
-            -moz-appearance: none;
-            appearance: none;
-        }
-        .platform-card {
-            position: relative;
-        }
-        .verified-badge {
-            position: absolute;
-            top: -8px;
-            left: -8px;
-            background: white;
-            border-radius: 50%;
-            padding: 2px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-            z-index: 20;
+        body { font-family: 'Tajawal', sans-serif; }
+        .bank-card.active {
+            border-color: #0f172a;
+            background-color: #f8f9fd;
         }
     </style>
 </head>
-<body class="antialiased">
+<body class="bg-[#f8f9fd] text-slate-800 antialiased relative min-h-screen">
+
+    <div id="customModal" class="fixed inset-0 bg-slate-900/60 backdrop-blur-sm z-50 flex items-center justify-center p-4 hidden opacity-0 transition-opacity duration-300">
+        <div class="bg-white rounded-[2rem] shadow-2xl max-w-md w-full p-6 text-center transform scale-95 transition-transform duration-300 border border-slate-100" id="modalBox">
+            <div id="modalIconContainer" class="w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl mb-4 shadow-sm">
+                </div>
+            <h3 id="modalTitle" class="text-xl font-black text-slate-900 mb-2">---</h3>
+            <p id="modalMessage" class="text-sm text-slate-500 font-bold leading-relaxed px-2">---</p>
+            <button id="modalBtn" class="mt-6 w-full py-3.5 rounded-xl font-black text-sm shadow-lg transition active:scale-[0.98]">
+                موافق
+            </button>
+        </div>
+    </div>
 
     <header class="container mx-auto px-6 py-6 flex justify-between items-center max-w-xl">
-        <span class="bg-[#0f172a] text-white text-sm px-5 py-2.5 rounded-full font-bold shadow-sm">
-            وكيل شحن
+        <span id="stepBadge" class="bg-[#0f172a] text-white text-sm px-5 py-2.5 rounded-full font-bold shadow-sm">
+            الخطوة 1: مراجعة الطلب
         </span>
         <div class="text-3xl font-black tracking-tight text-[#1e3a8a]">
             Cach<span class="text-amber-500">Bin</span>
         </div>
     </header>
 
-    <div class="text-center mt-6 mb-8 px-4">
-        <h1 class="text-3xl font-black text-slate-900 tracking-tight mb-2 sm:text-4xl">بوابة الشحن المباشر</h1>
-        <p class="text-sm text-slate-500 font-bold">نظام معالجة فوري وآمن</p>
+    <div id="reviewStep">
+        <div class="text-center mt-6 mb-8 px-4">
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight mb-2 sm:text-4xl">تأكيد طلب الشحن</h1>
+            <p class="text-sm text-slate-500 font-bold">يرجى مراجعة بيانات ومعلومات الدفع أسفله</p>
+        </div>
+
+        <main class="container mx-auto px-4 max-w-xl pb-16">
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100/90 p-6 md:p-10 text-right">
+                
+                <div class="flex items-center justify-between bg-slate-50 p-5 rounded-2xl mb-8 border border-slate-100">
+                    <div class="flex items-center gap-4">
+                        <img id="displayImg" src="" alt="Platform Image" class="h-12 w-auto object-contain rounded-xl shadow-sm bg-white p-1">
+                        <div>
+                            <span class="block text-xs font-bold text-slate-400 uppercase tracking-wider">المنصة / العملة المحددة</span>
+                            <h2 id="displayPlatform" class="text-lg font-black text-slate-900 uppercase">---</h2>
+                        </div>
+                    </div>
+                    <span class="bg-emerald-100 text-emerald-800 text-xs font-black px-3 py-1.5 rounded-full">
+                        <i class="fas fa-shield-check mr-1"></i> تم التحقق
+                    </span>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="space-y-2">
+                        <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">المعلومات التي ستصلك فيها الأموال (المحفظة المستهدفة):</label>
+                        <div class="block w-full px-4 py-4 bg-[#f8f9fd] border-2 border-slate-100 rounded-2xl text-slate-900 font-mono font-bold text-base text-left break-all shadow-inner" id="displayAccount">
+                            ---
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">المبلغ الإجمالي المطلوب دفعه:</label>
+                        <div class="relative bg-[#f8f9fd] rounded-2xl border-2 border-slate-100 p-5 flex items-center justify-between shadow-inner">
+                            <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center text-white shadow-md shrink-0">
+                                <i class="fas fa-money-bill-wave text-base"></i>
+                            </div>
+                            <div class="text-left">
+                                <span id="displayAmount" class="font-black text-3xl text-blue-600">0.00</span>
+                                <span class="font-black text-xl text-slate-500 mr-1">MAD</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <hr class="border-slate-100 my-6">
+
+                    <div class="bg-amber-50 border border-amber-200 rounded-2xl p-4 text-sm text-amber-900 flex gap-3 items-start">
+                        <i class="fas fa-info-circle text-amber-600 text-lg mt-0.5 shrink-0"></i>
+                        <div>
+                            <p class="font-bold mb-1">تعليمات إتمام العملية:</p>
+                            <p class="text-xs text-amber-800 leading-relaxed">المرجو التأكد جيداً من أن عنوان المحفظة أو الحساب صحيح بنسبة 100%. النظام غير مسؤول عن أي خطأ ناتج عن إدخال بيانات خاطئة.</p>
+                        </div>
+                    </div>
+
+                    <div class="pt-4 flex gap-4">
+                        <a href="../index.html" class="w-1/3 border-2 border-slate-200 text-slate-500 font-bold py-4 rounded-2xl transition hover:bg-slate-50 text-center text-sm flex items-center justify-center gap-2">
+                            <i class="fas fa-arrow-right"></i> رجوع
+                        </a>
+                        <button onclick="goToBankStep()" class="w-2/3 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-black py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2 transform active:scale-[0.98]">
+                            <span>تأكيد ومتابعة الدفع</span> <i class="fas fa-arrow-left"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </main>
     </div>
 
-    <main class="container mx-auto px-4 max-w-xl pb-16">
-        <div class="bg-white/95 backdrop-blur-sm rounded-[2.5rem] shadow-xl border border-slate-100/90 p-6 md:p-10">
-            
-            <form id="mainChargeForm" class="space-y-8" novalidate>
+    <div id="bankStep" class="hidden">
+        <div class="text-center mt-6 mb-8 px-4">
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight mb-2 sm:text-4xl">إختر طريقة الدفع المناسبة</h1>
+            <p class="text-sm text-slate-500 font-bold">قم بتحويل المبلغ المالي إلى أحد الحسابات التالية</p>
+        </div>
+
+        <main class="container mx-auto px-4 max-w-xl pb-16">
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100/90 p-6 md:p-10 text-right space-y-8">
                 
                 <div>
-                    <label class="block text-xs font-black text-slate-400 uppercase tracking-wider px-1 mb-3">إختر منصة الشحن أو العملة الرقمية</label>
-                    <div class="grid grid-cols-2 gap-4" id="platformGrid">
-                        
-                        <div data-platform="Binance" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/4Rrmnk6j/Binance.png" alt="Binance" class="h-10 w-auto object-contain pointer-events-none rounded-xl">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Binance</span>
-                        </div>
+                    <label class="block text-xs font-black text-slate-400 uppercase tracking-wider px-1 mb-4">اختر مصرفك أو محفظتك الإلكترونية</label>
+                    <div class="grid grid-cols-3 gap-3" id="banksGrid"></div>
+                </div>
 
-                        <div data-platform="Exness" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/DfpJ2cLr/Exness.png" alt="Exness" class="h-10 w-auto object-contain pointer-events-none rounded-xl">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Exness</span>
+                <div id="bankDetailsBox" class="bg-slate-50 border-2 border-slate-100 rounded-2xl p-5 space-y-5">
+                    <div class="flex items-center gap-3">
+                        <img id="selectedBankImg" src="" alt="Bank" class="h-10 w-auto object-contain rounded-lg bg-white p-1 shadow-sm">
+                        <div>
+                            <span class="block text-xs font-bold text-slate-400">الحساب البنكي المحدد</span>
+                            <h4 id="selectedBankName" class="text-sm font-black text-slate-900">---</h4>
                         </div>
+                    </div>
 
-                        <div data-platform="Bybit" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/r2qXLjmB/Bybit.png" alt="Bybit" class="h-10 w-auto object-contain pointer-events-none rounded-xl">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Bybit</span>
-                        </div>
-
-                        <div data-platform="JustMarkets" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/QvPqxp8N/Just-Markets.png" alt="JustMarkets" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">JustMarkets</span>
-                        </div>
-
-                        <div data-platform="PayPal" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/TxRDbXT7/IMG-7763.png" alt="PayPal" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">PayPal</span>
-                        </div>
-
-                        <div data-platform="RedotPay" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/rfMZyS2V/IMG-7774.png" alt="RedotPay" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">RedotPay</span>
-                        </div>
-
-                        <div data-platform="Skrill" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/6cqBvHst/IMG-7767.png" alt="Skrill" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Skrill</span>
-                        </div>
-
-                        <div data-platform="Wise" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/Wv7ktbsp/IMG-7768.png" alt="Wise" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Wise</span>
-                        </div>
-
-                        <div data-platform="Payoneer" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/LdJtz59p/IMG-7769.png" alt="Payoneer" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Payoneer</span>
-                        </div>
-
-                        <div data-platform="Volet Advcash" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <img src="https://i.ibb.co/N2BGjnzY/IMG-7772.png" alt="Volet Advcash" class="h-10 w-auto object-contain pointer-events-none">
-                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Volet Advcash</span>
-                        </div>
-
-                        <div id="cryptoSelectorCard" class="col-span-2 border-2 border-dashed border-slate-200 bg-slate-50/50 rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:bg-slate-50 flex flex-col items-center justify-center gap-3 h-32 relative">
-                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
-                            <div id="cryptoSelectorContainer" class="flex flex-col items-center justify-center gap-2 w-full">
-                                <div class="flex items-center gap-3">
-                                    <div class="w-10 h-10 bg-gradient-to-tr from-amber-500 to-yellow-400 rounded-full flex items-center justify-center text-white shadow-sm">
-                                        <i class="fas fa-coins text-lg"></i>
-                                    </div>
-                                    <div class="text-right">
-                                        <span id="selectedCryptoTitle" class="block text-base font-black text-slate-800">باقي العملات الرقمية</span>
-                                        <span id="selectedCryptoSub" class="block text-xs font-bold text-slate-400">إضغط هنا لإختيار عملة أخرى</span>
-                                    </div>
-                                </div>
+                    <div class="space-y-3 pt-2">
+                        <div>
+                            <span class="block text-xs font-bold text-slate-400 mb-1">إسم صاحب الحساب (Holder Name):</span>
+                            <div class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200">
+                                <span id="selectedBankHolder" class="font-bold text-slate-800 text-sm">---</span>
+                                <button onclick="copyText('selectedBankHolder')" class="text-blue-600 text-xs font-bold hover:text-blue-800"><i class="fas fa-copy"></i> نسخ</button>
                             </div>
-                            
-                            <select id="cryptoHiddenSelect" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10">
-                                <option value="" disabled selected>إختر العملة من هنا...</option>
-                                <option value="XRP" data-img="https://i.ibb.co/PzQxvB3c/XRP.png">XRP</option>
-                                <option value="TRON" data-img="https://i.ibb.co/jvYvwN44/TRON.png">TRON</option>
-                                <option value="TONCOIN" data-img="https://i.ibb.co/v6tJGznS/TONCOIN.png">TONCOIN</option>
-                                <option value="DOGECOIN" data-img="https://i.ibb.co/zWSTsKcg/DOGECOIN.png">DOGE COIN</option>
-                                <option value="SHIBA INU" data-img="https://i.ibb.co/tp54hCL0/SHIBA-INU.png">SHIBA INU</option>
-                                <option value="BNB" data-img="https://i.ibb.co/WvXKnBsn/BNB.png">BNB</option>
-                                <option value="SOLANA" data-img="https://i.ibb.co/F4qLCDhL/SOLANA.png">SOLANA</option>
-                                <option value="TETHER" data-img="https://i.ibb.co/Zp5fcKL1/TETHER.png">TETHER</option>
-                            </select>
                         </div>
 
-                    </div>
-                </div>
-
-                <div id="platformError" class="hidden text-red-500 text-xs font-bold px-1 -mt-4">
-                    <i class="fas fa-exclamation-circle ml-1"></i> المرجو تحديد منصة الشحن أولاً.
-                </div>
-
-                <div class="space-y-2.5">
-                    <label id="accountLabel" class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">Your Binance ID Wallet</label>
-                    <input type="text" id="accountInput" required class="block w-full px-4 py-4 bg-[#f8f9fd] border-2 border-transparent rounded-2xl text-slate-800 font-bold text-[13px] md:text-sm focus:bg-white focus:border-slate-300 outline-none transition placeholder:text-slate-400 leading-relaxed" placeholder="إدخل بياناتك التي تريد إستقبال النقود فيها">
-                    <div id="accountError" class="hidden text-red-500 text-xs font-bold px-1">
-                        <i class="fas fa-exclamation-circle ml-1"></i> هذا الحقل مطلوب، يرجى إدخال البيانات المخصصة للاستقبال.
-                    </div>
-                </div>
-
-                <div class="space-y-2.5">
-                    <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">المبلغ المطلوب (MAD)</label>
-                    <div class="relative bg-[#f8f9fd] rounded-2xl border-2 border-transparent focus-within:bg-white focus-within:border-slate-300 transition flex items-center pr-5">
-                        <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0 pointer-events-none">
-                            <i class="fas fa-money-bill-wave text-base"></i>
+                        <div>
+                            <span class="block text-xs font-bold text-slate-400 mb-1">رقم الحساب أو الـ RIB:</span>
+                            <div class="flex items-center justify-between bg-white px-4 py-3 rounded-xl border border-slate-200">
+                                <span id="selectedBankRib" class="font-mono font-bold text-slate-900 text-sm break-all tracking-wider">---</span>
+                                <button onclick="copyText('selectedBankRib')" class="text-blue-600 text-xs font-bold hover:text-blue-800"><i class="fas fa-copy"></i> نسخ</button>
+                            </div>
                         </div>
-                        <input type="number" id="amountInput" step="any" required class="block w-full pl-5 pr-4 py-5 bg-transparent border-0 text-slate-900 font-black text-3xl text-left focus:ring-0 outline-none placeholder:text-slate-300" placeholder="0.00">
-                    </div>
-                    <div id="amountError" class="hidden text-red-500 text-xs font-bold px-1">
-                        <i class="fas fa-exclamation-circle ml-1"></i> يرجى إدخال مبلغ شحن صحيح ومقبول.
                     </div>
                 </div>
 
-                <div class="pt-2">
-                    <button type="submit" class="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-black py-5 px-6 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-xl text-lg tracking-wide flex items-center justify-center gap-2 transform active:scale-[0.99]">
-                        <span>إرسال طلب الشحن</span>
+                <div class="pt-2 flex gap-4">
+                    <button onclick="goToReviewStep()" class="w-1/3 border-2 border-slate-200 text-slate-500 font-bold py-4 rounded-2xl transition hover:bg-slate-50 text-center text-sm">
+                        <i class="fas fa-arrow-right"></i> تعديل البيانات
+                    </button>
+                    <button onclick="goToReceiptStep()" class="w-2/3 bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-black py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2 transform active:scale-[0.98]">
+                        <span>لقد قمت بالدفع، إنهاء</span> <i class="fas fa-arrow-left"></i>
                     </button>
                 </div>
 
-            </form>
-        </div>
-
-        <div class="mt-12 bg-white/95 backdrop-blur-sm rounded-[2rem] shadow-lg border border-slate-100/90 p-6">
-            <h3 class="text-lg font-black text-slate-900 mb-6 flex items-center gap-2">
-                <i class="fas fa-star text-amber-500"></i>
-                <span>ماذا يقول عملاؤنا؟</span>
-            </h3>
-            <div class="space-y-4">
-                <div class="border-b border-slate-50 pb-4">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="text-sm font-bold text-slate-800">Amine Morabit</span>
-                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    </div>
-                    <p class="text-xs text-slate-500 font-medium">أفضل منصة لشحن حساب باينانس في المغرب، المعالجة سريعة جداً والدعم الفني متعاون للغاية.</p>
-                </div>
-                <div class="border-b border-slate-50 pb-4">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="text-sm font-bold text-slate-800">Yassine Tazi</span>
-                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    </div>
-                    <p class="text-xs text-slate-500 font-medium">شحنت حساب إكسنس الخاص بي في أقل من 10 دقائق عبر تحويل CIH. خدمة ممتازة وثقة عمياء.</p>
-                </div>
-                <div class="border-b border-slate-50 pb-4">
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="text-sm font-bold text-slate-800">Sara Bennani</span>
-                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    </div>
-                    <p class="text-xs text-slate-500 font-medium">كنت أواجه مشكلة في شحن بطاقة ريدوت باي بسبب الليميت البنكي، لكن الموقع حل لي المشكلة ببساطة.</p>
-                </div>
-                <div>
-                    <div class="flex justify-between items-center mb-1">
-                        <span class="text-sm font-bold text-slate-800">Adil Mansour</span>
-                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
-                    </div>
-                    <p class="text-xs text-slate-500 font-medium">سرعة في التنفيد ومصداقية تامة، تعاملت معاهم كذا مرة لشحن حساب Bybit وديما الخدمة في المستوى.</p>
-                </div>
             </div>
+        </main>
+    </div>
+
+    <div id="receiptStep" class="hidden">
+        <div class="text-center mt-6 mb-8 px-4">
+            <h1 class="text-3xl font-black text-slate-900 tracking-tight mb-2 sm:text-4xl">إثبات عملية التحويل</h1>
+            <p class="text-sm text-slate-500 font-bold">الرجاء إرفاق صورة الروسي لإكمال شحن طلبك</p>
         </div>
 
-        <footer class="mt-12 text-center">
-            <p class="text-xs font-black text-slate-400 tracking-wide uppercase">أحسن شركة شحن منصات في المغرب لعام 2026</p>
-        </footer>
-    </main>
+        <main class="container mx-auto px-4 max-w-xl pb-16">
+            <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100/90 p-6 md:p-10 text-right space-y-6">
+                
+                <div class="grid grid-cols-2 gap-4">
+                    <div class="bg-slate-50/80 p-4 rounded-2xl border border-slate-100">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">المنصة المختارة</span>
+                        <div class="flex items-center gap-2 mt-1">
+                            <img id="finalPlatformImg" src="" class="h-6 w-auto object-contain rounded">
+                            <span id="finalPlatformName" class="font-black text-slate-900 uppercase text-sm">---</span>
+                        </div>
+                    </div>
+                    <div class="bg-slate-50/80 p-4 rounded-2xl border border-slate-100">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">المبلغ الإجمالي</span>
+                        <div class="mt-1">
+                            <span id="finalAmount" class="font-black text-lg text-blue-600">0.00</span>
+                            <span class="font-black text-xs text-slate-500">MAD</span>
+                        </div>
+                    </div>
+
+                    <div class="col-span-2 bg-slate-50/80 p-4 rounded-2xl border border-slate-100">
+                        <span class="block text-xs font-bold text-slate-400 mb-1">الحساب البنكي المستلم</span>
+                        <div class="flex items-center justify-between mt-1">
+                            <div class="flex items-center gap-2">
+                                <img id="finalBankImg" src="" class="h-6 w-auto object-contain rounded bg-white p-0.5 shadow-sm">
+                                <span id="finalBankName" class="font-black text-slate-800 text-sm uppercase">---</span>
+                            </div>
+                            <div class="text-left">
+                                <span id="finalBankHolder" class="text-xs font-bold text-slate-600 block">---</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-span-2 space-y-2">
+                        <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">اكتب اسمك مثل الحساب البنكي:</label>
+                        <div class="relative flex items-center">
+                            <input type="text" id="userInputName" placeholder="أدخل إسمك الكامل الذي قمت بالدفع منه..." class="w-full px-5 py-4 bg-[#f8f9fd] border-2 border-slate-200 rounded-2xl text-slate-900 font-bold text-sm focus:border-slate-900 focus:bg-white outline-none transition placeholder-slate-400 shadow-inner">
+                            <div class="absolute left-4 text-slate-400">
+                                <i class="fas fa-user-edit"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="space-y-2">
+                    <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">قم بتحميل صورة الروسي (وصل التحويل البنكي):</label>
+                    <div class="relative border-2 border-dashed border-slate-300 bg-slate-50 rounded-2xl p-6 text-center hover:bg-slate-100/70 transition cursor-pointer flex flex-col items-center justify-center gap-3" id="dropzone" onclick="document.getElementById('receiptInput').click()">
+                        <div class="w-12 h-12 bg-white rounded-full shadow-sm flex items-center justify-center text-slate-400" id="receiptIconBox">
+                            <i class="fas fa-cloud-upload text-xl text-blue-500"></i>
+                        </div>
+                        <div id="uploadTextContainer">
+                            <span class="block text-sm font-black text-slate-700">اضغط هنا لرفع الصورة</span>
+                            <span class="block text-xs text-slate-400 mt-0.5">يدعم صيغ JPG, PNG, JPEG</span>
+                        </div>
+                        <img id="receiptPreview" src="" class="hidden max-h-40 w-auto rounded-xl shadow-sm border border-slate-200 mt-2">
+                        <input type="file" id="receiptInput" accept="image/*" class="hidden">
+                    </div>
+                </div>
+
+                <div class="pt-4 flex gap-4">
+                    <button onclick="goToBankStep()" class="w-1/3 border-2 border-slate-200 text-slate-500 font-bold py-4 rounded-2xl transition hover:bg-slate-50 text-center text-sm">
+                        <i class="fas fa-arrow-right"></i> معلومات البنك
+                    </button>
+                    <button id="submitBtn" onclick="submitFinalOrderWithReceipt()" class="w-2/3 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-500 hover:to-teal-500 text-white font-black py-4 rounded-2xl transition shadow-xl text-base flex items-center justify-center gap-2 transform active:scale-[0.98]">
+                        <span id="submitBtnText">تأكيد وإرسال الطلب</span> <i class="fas fa-check-circle"></i>
+                    </button>
+                </div>
+
+            </div>
+        </main>
+    </div>
 
     <script>
-        let selectedPlatform = "Binance";
-        let selectedImgSrc = "https://i.ibb.co/4Rrmnk6j/Binance.png"; 
+        // إعدادات الروابط والـ API الـخاصة بك
+        const IMGBB_API_KEY = "b94a021b0794567236ba16794f28673a";
+        const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_sbl7wUNO3cKD-_-qpn4hBiCi-es_Xbf4WcdgaDualXDgIQNQ5QEa--lsDP2J8vFnXQ/exec";
+        // داتا البنوك
+        const banksData = {
+            cih: { name: "CIH Mobile", holder: "IIyas Sahraoui", rib: "853780262215066608687643", img: "https://i.ibb.co/GfkNmL8J/image.png" },
+            attijari: { name: "Attijari Bank", holder: "Achraf Ouardi", rib: "853780262251367830014865", img: "https://i.ibb.co/W4zkbgQs/image.png" },
+            bp: { name: "Bank Popular", holder: "Achraf Ouardi", rib: "853780262251367830014865", img: "https://i.ibb.co/fVYb0dTq/image.png" },
+            bmce: { name: "BMCE BANK", holder: "Lina Tamri", rib: "853780262344048875774506", img: "https://i.ibb.co/hFDYt0VF/image.png" },
+            cashplus: { name: "CASH PLUS", holder: "YASSINE MAJARRI", rib: "0705804134", img: "https://i.ibb.co/xtF3gXwW/image.png" },
+            barid: { name: "Albarid Bank", holder: "anas AI Rassikh", rib: "853780261836325034339350", img: "https://i.ibb.co/4ZWPy0Ks/image.png" },
+            bankalik: { name: "Bankalik", holder: "Yasmine EL FadIi", rib: "853780262320177970803190", img: "https://i.ibb.co/qLWDjWkV/image.png" },
+            sg: { name: "Societe Generale", holder: "Rayan Hachmi", rib: "853780262233524306269888", img: "https://i.ibb.co/zWhdDp7L/image.png" },
+            cfg: { name: "CFG BANK", holder: "IIyas Sahraoui", rib: "853780262215066608687643", img: "https://i.ibb.co/S7xJ6rJ8/image.png" }
+        };
 
-        const cards = document.querySelectorAll('.platform-card');
-        const cryptoSelectorCard = document.getElementById('cryptoSelectorCard');
-        const cryptoHiddenSelect = document.getElementById('cryptoHiddenSelect');
-        const selectedCryptoTitle = document.getElementById('selectedCryptoTitle');
-        const selectedCryptoSub = document.getElementById('selectedCryptoSub');
-        const cryptoSelectorContainer = document.getElementById('cryptoSelectorContainer');
-        const accountLabel = document.getElementById('accountLabel');
-        const accountInput = document.getElementById('accountInput');
-        const amountInput = document.getElementById('amountInput');
+        let globalPlatform = "";
+        let globalAmount = "";
+        let globalAccount = "";
+        let globalImg = "";
+        let currentSelectedBankKey = "";
 
-        const platformError = document.getElementById('platformError');
-        const accountError = document.getElementById('accountError');
-        const amountError = document.getElementById('amountError');
+        // دالة إظهار الـ Modal الإحترافي
+        function showCustomModal(type, title, message, callback = null) {
+            const modal = document.getElementById('customModal');
+            const box = document.getElementById('modalBox');
+            const iconBox = document.getElementById('modalIconContainer');
+            const titleEl = document.getElementById('modalTitle');
+            const msgEl = document.getElementById('modalMessage');
+            const btn = document.getElementById('modalBtn');
 
-        function updateFormLabels(platformName) {
-            document.querySelectorAll('.verified-badge').forEach(b => b.classList.add('hidden'));
+            titleEl.innerText = title;
+            msgEl.innerText = message;
 
-            const selectedCard = document.querySelector(`[data-platform="${platformName}"]`);
-            if (selectedCard) {
-                selectedCard.querySelector('.verified-badge').classList.remove('hidden');
-            } else if (platformName !== "Binance" && platformName !== "Exness" && platformName !== "Bybit" && platformName !== "JustMarkets" && platformName !== "PayPal" && platformName !== "RedotPay" && platformName !== "Skrill" && platformName !== "Wise" && platformName !== "Payoneer" && platformName !== "Volet Advcash" && platformName !== "") {
-                cryptoSelectorCard.querySelector('.verified-badge').classList.remove('hidden');
-            }
-
-            if (platformName === "TRON") {
-                accountLabel.innerText = "Your Tron Wallet";
-            } else if (platformName === "TETHER") {
-                accountLabel.innerText = "Your Tether (USDT) TRC 20 Wallet";
-            } else if (platformName === "Binance") {
-                accountLabel.innerText = "Your Binance ID Wallet";
-            } else if (platformName === "Bybit") {
-                accountLabel.innerText = "Your Bybit ID Wallet";
-            } else if (platformName === "Exness") {
-                accountLabel.innerText = "WALLET ADDRESS EXNESS (USDT) TRC20";
-            } else if (platformName === "JustMarkets") {
-                accountLabel.innerText = "WALLET ADDRESS JUSTMARKETS (USDT) TRC20";
-            } else if (platformName === "DOGECOIN") {
-                accountLabel.innerText = "Your Dogecoin Wallet";
-            } else if (platformName === "TONCOIN") {
-                accountLabel.innerText = "Your Toncoin Wallet";
-            } else if (platformName === "BNB") {
-                accountLabel.innerText = "Your Binance Coin (BNB) Wallet";
-            } else if (platformName === "SHIBA INU") {
-                accountLabel.innerText = "Your Shiba (BEP20) Wallet";
-            } else if (platformName === "XRP") {
-                accountLabel.innerText = "Your XRP Wallet";
-            } else if (platformName === "SOLANA") {
-                accountLabel.innerText = "Your Solana Wallet";
-            } else if (platformName === "PayPal") {
-                accountLabel.innerText = "Your PayPal Email";
-            } else if (platformName === "RedotPay") {
-                accountLabel.innerText = "Your RedotPay Account ID";
-            } else if (platformName === "Skrill") {
-                accountLabel.innerText = "Your Skrill Email";
-            } else if (platformName === "Wise") {
-                accountLabel.innerText = "Your Wise Email / ID";
-            } else if (platformName === "Payoneer") {
-                accountLabel.innerText = "Your Payoneer Email";
-            } else if (platformName === "Volet Advcash") {
-                accountLabel.innerText = "Your Volet Advcash Wallet ID";
+            if (type === 'success') {
+                iconBox.className = "w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl mb-4 bg-emerald-50 text-emerald-500 shadow-sm border border-emerald-100";
+                iconBox.innerHTML = `<i class="fas fa-check-circle"></i>`;
+                btn.className = "mt-6 w-full py-3.5 bg-emerald-600 hover:bg-emerald-500 text-white font-black text-sm rounded-xl shadow-lg shadow-emerald-600/20 transition active:scale-[0.98]";
+            } else if (type === 'error') {
+                iconBox.className = "w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl mb-4 bg-rose-50 text-rose-500 shadow-sm border border-rose-100";
+                iconBox.innerHTML = `<i class="fas fa-exclamation-triangle"></i>`;
+                btn.className = "mt-6 w-full py-3.5 bg-slate-900 hover:bg-slate-800 text-white font-black text-sm rounded-xl shadow-lg transition active:scale-[0.98]";
+            } else if (type === 'loading') {
+                iconBox.className = "w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl mb-4 bg-blue-50 text-blue-500 shadow-sm border border-blue-100 animate-spin";
+                iconBox.innerHTML = `<i class="fas fa-spinner"></i>`;
+                btn.className = "hidden"; // إخفاء الزر أثناء التحميل
             } else {
-                accountLabel.innerText = `WALLET ADDRESS ${platformName}`;
+                iconBox.className = "w-16 h-16 rounded-full mx-auto flex items-center justify-center text-2xl mb-4 bg-blue-50 text-blue-500 shadow-sm border border-blue-100";
+                iconBox.innerHTML = `<i class="fas fa-clipboard-check"></i>`;
+                btn.className = "mt-6 w-full py-3.5 bg-blue-600 hover:bg-blue-500 text-white font-black text-sm rounded-xl shadow-lg shadow-blue-600/20 transition active:scale-[0.98]";
             }
-            accountInput.placeholder = "إدخل بياناتك التي تريد إستقبال النقود فيها";
+
+            modal.classList.remove('hidden');
+            setTimeout(() => {
+                modal.classList.remove('opacity-0');
+                box.classList.remove('scale-95');
+            }, 10);
+
+            btn.onclick = function() {
+                modal.classList.add('opacity-0');
+                box.classList.add('scale-95');
+                setTimeout(() => {
+                    modal.classList.add('hidden');
+                    if (callback) callback();
+                }, 300);
+            };
         }
 
-        cards.forEach(card => {
-            if(card.getAttribute('data-platform') === selectedPlatform) {
-                card.classList.remove('border-slate-100');
-                card.classList.add('border-slate-900', 'shadow-md', 'bg-slate-50/30');
-                card.querySelector('.verified-badge').classList.remove('hidden');
-            }
+        function hideModal() {
+            const modal = document.getElementById('customModal');
+            modal.classList.add('opacity-0');
+            setTimeout(() => { modal.classList.add('hidden'); }, 300);
+        }
 
-            card.addEventListener('click', () => {
-                platformError.classList.add('hidden');
+        // استخراج البيانات وتجهيزها
+        function getUrlData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            globalPlatform = urlParams.get('platform') ? decodeURIComponent(urlParams.get('platform')) : "---";
+            globalAmount = urlParams.get('amount') ? parseFloat(urlParams.get('amount')).toFixed(2) : "0.00";
+            globalAccount = urlParams.get('account') ? decodeURIComponent(urlParams.get('account')) : "---";
+            globalImg = urlParams.get('img') ? decodeURIComponent(urlParams.get('img')) : "";
 
-                cards.forEach(c => {
-                    c.classList.remove('border-slate-900', 'shadow-md', 'bg-slate-50/30');
-                    c.classList.add('border-slate-100');
-                });
-                cryptoSelectorCard.classList.remove('border-slate-900', 'bg-slate-50/80', 'shadow-md');
-                cryptoSelectorCard.classList.add('border-slate-200', 'bg-slate-50/50');
-                
-                cryptoHiddenSelect.value = "";
-                selectedCryptoTitle.innerText = "باقي العملات الرقمية";
-                selectedCryptoSub.innerText = "إضغط هنا لإختيار عملة أخرى";
-                cryptoSelectorContainer.innerHTML = `
-                    <div class="flex items-center gap-3">
-                        <div class="w-10 h-10 bg-gradient-to-tr from-amber-500 to-yellow-400 rounded-full flex items-center justify-center text-white shadow-sm">
-                            <i class="fas fa-coins text-lg"></i>
-                        </div>
-                        <div class="text-right">
-                            <span id="selectedCryptoTitle" class="block text-base font-black text-slate-800">باقي العملات الرقمية</span>
-                            <span id="selectedCryptoSub" class="block text-xs font-bold text-slate-400">إضغط هنا لإختيار عملة أخرى</span>
-                        </div>
-                    </div>
+            document.getElementById('displayPlatform').innerText = globalPlatform;
+            document.getElementById('displayAmount').innerText = globalAmount;
+            document.getElementById('displayAccount').innerText = globalAccount;
+            document.getElementById('displayAccount').style.direction = "ltr";
+            if (globalImg) document.getElementById('displayImg').setAttribute('src', globalImg);
+
+            document.getElementById('finalPlatformName').innerText = globalPlatform;
+            document.getElementById('finalAmount').innerText = globalAmount;
+            if (globalImg) document.getElementById('finalPlatformImg').setAttribute('src', globalImg);
+        }
+
+        // بناء البنوك
+        function setupBanksGrid() {
+            const grid = document.getElementById('banksGrid');
+            grid.innerHTML = '';
+            Object.keys(banksData).forEach((key, index) => {
+                const bank = banksData[key];
+                const card = document.createElement('div');
+                card.className = `bank-card border-2 border-slate-100 bg-white rounded-xl p-3 text-center cursor-pointer transition flex flex-col items-center justify-center gap-2 h-24 shadow-sm hover:shadow-md ${index === 0 ? 'active border-slate-900' : ''}`;
+                card.innerHTML = `
+                    <img src="${bank.img}" alt="${bank.name}" class="h-8 w-auto object-contain rounded">
+                    <span class="text-[11px] font-black tracking-tight text-slate-700 uppercase leading-none text-center">${bank.name}</span>
                 `;
-
-                card.classList.remove('border-slate-100');
-                card.classList.add('border-slate-900', 'shadow-md', 'bg-slate-50/30');
-                selectedPlatform = card.getAttribute('data-platform');
-                selectedImgSrc = card.querySelector('img').getAttribute('src'); 
-                updateFormLabels(selectedPlatform);
+                card.addEventListener('click', () => {
+                    document.querySelectorAll('.bank-card').forEach(c => c.classList.remove('active', 'border-slate-900'));
+                    card.classList.add('active', 'border-slate-900');
+                    selectBank(key);
+                });
+                grid.appendChild(card);
             });
-        });
+            selectBank(Object.keys(banksData)[0]);
+        }
 
-        cryptoHiddenSelect.addEventListener('change', function() {
-            platformError.classList.add('hidden');
-            
-            cards.forEach(c => {
-                c.classList.remove('border-slate-900', 'shadow-md', 'bg-slate-50/30');
-                c.classList.add('border-slate-100');
+        function selectBank(key) {
+            currentSelectedBankKey = key;
+            const bank = banksData[key];
+            document.getElementById('selectedBankName').innerText = bank.name;
+            document.getElementById('selectedBankHolder').innerText = bank.holder;
+            document.getElementById('selectedBankRib').innerText = bank.rib;
+            document.getElementById('selectedBankImg').setAttribute('src', bank.img);
+
+            document.getElementById('finalBankName').innerText = bank.name;
+            document.getElementById('finalBankHolder').innerText = bank.holder;
+            document.getElementById('finalBankImg').setAttribute('src', bank.img);
+        }
+
+        // التنقل بين الخطوات
+        function goToBankStep() {
+            document.getElementById('reviewStep').classList.add('hidden');
+            document.getElementById('receiptStep').classList.add('hidden');
+            document.getElementById('bankStep').classList.remove('hidden');
+            updateBadge("الخطوة 2: اختيار البنك والدفع", "bg-amber-500");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToReviewStep() {
+            document.getElementById('bankStep').classList.add('hidden');
+            document.getElementById('receiptStep').classList.add('hidden');
+            document.getElementById('reviewStep').classList.remove('hidden');
+            updateBadge("الخطوة 1: مراجعة الطلب", "bg-[#0f172a]");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function goToReceiptStep() {
+            document.getElementById('bankStep').classList.add('hidden');
+            document.getElementById('reviewStep').classList.add('hidden');
+            document.getElementById('receiptStep').classList.remove('hidden');
+            updateBadge("الخطوة 3: إثبات الدفع والإنهاء", "bg-emerald-600");
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function updateBadge(text, className) {
+            const badge = document.getElementById('stepBadge');
+            badge.innerText = text;
+            badge.className = `${className} text-white text-sm px-5 py-2.5 rounded-full font-bold shadow-sm`;
+        }
+
+        function copyText(elementId) {
+            const text = document.getElementById(elementId).innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                showCustomModal('copy', 'تم النسخ بنجاح', 'لقد تم نسخ المعطيات إلى الحافظة بنجاح للاستعمال.');
             });
+        }
 
-            cryptoSelectorCard.classList.remove('border-slate-200', 'bg-slate-50/50');
-            cryptoSelectorCard.classList.add('border-slate-900', 'bg-slate-50/80', 'shadow-md');
-
-            const selectedOption = this.options[this.selectedIndex];
-            const cryptoName = selectedOption.value;
-            const cryptoImgSrc = selectedOption.getAttribute('data-img');
-            const cryptoText = selectedOption.text;
-
-            selectedPlatform = cryptoName;
-            selectedImgSrc = cryptoImgSrc; 
-            updateFormLabels(selectedPlatform);
-
-            cryptoSelectorContainer.innerHTML = `
-                <div class="flex items-center gap-3">
-                    <img src="${cryptoImgSrc}" alt="${cryptoText}" class="h-11 w-auto object-contain pointer-events-none rounded-xl shadow-sm">
-                    <div class="text-right">
-                        <span class="block text-base font-black text-slate-900 uppercase">${cryptoText}</span>
-                        <span class="block text-xs font-bold text-emerald-600">تم الإختيار بنجاح</span>
-                    </div>
-                </div>
-            `;
+        // رفع الروسي والمعاينة
+        document.getElementById('receiptInput').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(event) {
+                    const preview = document.getElementById('receiptPreview');
+                    preview.setAttribute('src', event.target.result);
+                    preview.classList.remove('hidden');
+                    
+                    document.getElementById('uploadTextContainer').classList.add('hidden');
+                    document.getElementById('receiptIconBox').innerHTML = `<i class="fas fa-check-circle text-xl text-emerald-500"></i>`;
+                };
+                reader.readAsDataURL(file);
+            }
         });
 
-        accountInput.addEventListener('input', () => {
-            if (accountInput.value.trim() !== "") accountError.classList.add('hidden');
-        });
-        amountInput.addEventListener('input', () => {
-            if (amountInput.value && parseFloat(amountInput.value) > 0) amountError.classList.add('hidden');
-        });
+        // ============================================
+        // دالة الرفع إلى ImgBB والربط النهائي مع شيت
+        // ============================================
+        function submitFinalOrderWithReceipt() {
+            const typedName = document.getElementById('userInputName').value.trim();
+            const fileInput = document.getElementById('receiptInput');
 
-        const mainForm = document.getElementById('mainChargeForm');
-
-        mainForm.addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            let isValid = true;
-
-            if (!selectedPlatform) {
-                platformError.classList.remove('hidden');
-                isValid = false;
-            } else {
-                platformError.classList.add('hidden');
+            if (typedName === "") {
+                showCustomModal('error', 'بيانات ناقصة', 'يرجى كتابة اسمك الكامل المتطابق مع الحساب البنكي الذي أرسلت منه أولاً للمتابعة.');
+                return;
             }
 
-            if (accountInput.value.trim() === "") {
-                accountError.classList.remove('hidden');
-                isValid = false;
-            } else {
-                accountError.classList.add('hidden');
+            if (!fileInput.files || fileInput.files.length === 0) {
+                showCustomModal('error', 'مستند غائب', 'يرجى إرفاق صورة وصل التحويل البنكي (الروسي) لتأكيد المعاملة بشكل سليم.');
+                return;
             }
 
-            const parsedAmount = parseFloat(amountInput.value || 0);
-            if (isNaN(parsedAmount) || parsedAmount <= 0) {
-                amountError.classList.remove('hidden');
-                isValid = false;
-            } else {
-                amountError.classList.add('hidden');
-            }
+            // تعطيل الزر وإظهار شاشة التحميل لمنع التكرار
+            document.getElementById('submitBtn').disabled = true;
+            showCustomModal('loading', 'جاري معالجة طلبك...', 'الرجاء الانتظار، يتم الآن رفع الوصل وتسجيل معطيات الدفع الخاصة بك في النظام...');
 
-            if (!isValid) return;
+            const file = fileInput.files[0];
+            const formData = new FormData();
+            formData.append('image', file);
 
-            const amount = parsedAmount.toFixed(2);
-            const account = encodeURIComponent(accountInput.value);
-            const platform = encodeURIComponent(selectedPlatform);
-            const image = encodeURIComponent(selectedImgSrc);
+            // 1. رفع الصورة إلى ImgBB
+            fetch(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, {
+                method: 'POST',
+                body: formData
+            })
+            .then(res => res.json())
+            .then(imgbbResult => {
+                if (imgbbResult.success) {
+                    const uploadedImageUrl = imgbbResult.data.url; // رابط الصورة الجاهز من ImgBB
+                    sendDataToGoogleSheets(typedName, uploadedImageUrl);
+                } else {
+                    throw new Error("ImgBB Upload Failed");
+                }
+            })
+            .catch(error => {
+                console.error(error);
+                document.getElementById('submitBtn').disabled = false;
+                showCustomModal('error', 'فشل الرفع', 'حدث خطأ أثناء تحميل صورة الوصل، يرجى التحقق من اتصالك بالإنترنت والمحاولة مجدداً.');
+            });
+        }
 
-            window.location.href = `w/peyememethode.html?platform=${platform}&amount=${amount}&account=${account}&img=${image}`;
-        });
+        // ================================================================
+        // 2. إرسال جميع المعطيات لـ Google Sheets مع تفعيل نمط الاستقرار المستقل no-cors
+        // ================================================================
+        function sendDataToGoogleSheets(name, imageUrl) {
+            const selectedBankName = banksData[currentSelectedBankKey].name;
+
+            const url = `${GOOGLE_APPS_SCRIPT_URL}?nomComplet=${encodeURIComponent(name)}&plateforme=${encodeURIComponent(globalPlatform)}&montant=${encodeURIComponent(globalAmount)}&adresseRec=${encodeURIComponent(globalAccount)}&banqueDest=${encodeURIComponent(selectedBankName)}&fileUrl=${encodeURIComponent(imageUrl)}`;
+
+            // إرسال مباشر في الخلفية بنمط no-cors لمنع المتصفح من اعتراض التحويل الداخلي لجوجل
+            fetch(url, {
+                method: 'GET',
+                mode: 'no-cors'
+            })
+            .then(() => {
+                // تفعيل واجهة النجاح فوراً عند الإرسال الناجح بدون شاشات خطأ وهمية
+                document.getElementById('submitBtn').disabled = false;
+                showCustomModal(
+                    'success', 
+                    'تم إرسال الطلب بنجاح', 
+                    `شكراً لك، تم تسجيل طلبك باسم (${name}). يقوم قسم التدقيق حالياً بـمراجعة وصـل الدفع، وسيتم شحن حسابك فوراً بعد التأكيد.`,
+                    function() {
+                        window.location.href = "../index.html";
+                    }
+                );
+            });
+        }
+
+        // تشغيل الدالات الأساسية عند تحميل الصفحة
+        window.onload = function() {
+            getUrlData();
+            setupBanksGrid();
+        };
     </script>
 </body>
-                            </html>
+</html>
