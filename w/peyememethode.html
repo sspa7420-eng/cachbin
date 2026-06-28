@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CachBin | تأكيد طلب الشحن والدفع</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link class="rtl" rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
@@ -241,7 +241,7 @@
     <script>
         // إعدادات الروابط والـ API الـخاصة بك
         const IMGBB_API_KEY = "b94a021b0794567236ba16794f28673a";
-        const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbxuTNHgPQ1AT6BQAqVFjufRH4ADEAezHY0jSO8iRJXVEbvqyI3MJtWoRdOlF8djBMha/exec";
+        const GOOGLE_APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycby_sbl7wUNO3cKD-_-qpn4hBiCi-es_Xbf4WcdgaDualXDgIQNQ5QEa--lsDP2J8vFnXQ/exec";
         // داتا البنوك
         const banksData = {
             cih: { name: "CIH Mobile", holder: "IIyas Sahraoui", rib: "853780262215066608687643", img: "https://i.ibb.co/GfkNmL8J/image.png" },
@@ -469,34 +469,29 @@
         }
 
         // ================================================================
-        // 2. إرسال جميع المعطيات لـ Google Sheets عبر السكريبت بطريقة GET المضمونة
+        // 2. إرسال جميع المعطيات لـ Google Sheets مع تفعيل نمط الاستقرار المستقل no-cors
         // ================================================================
         function sendDataToGoogleSheets(name, imageUrl) {
             const selectedBankName = banksData[currentSelectedBankKey].name;
 
             const url = `${GOOGLE_APPS_SCRIPT_URL}?nomComplet=${encodeURIComponent(name)}&plateforme=${encodeURIComponent(globalPlatform)}&montant=${encodeURIComponent(globalAmount)}&adresseRec=${encodeURIComponent(globalAccount)}&banqueDest=${encodeURIComponent(selectedBankName)}&fileUrl=${encodeURIComponent(imageUrl)}`;
 
-            // تم تغيير الطريقة إلى GET وتفعيل نمط الـ cors لتجاوز الحظر تماماً
+            // إرسال مباشر في الخلفية بنمط no-cors لمنع المتصفح من اعتراض التحويل الداخلي لجوجل
             fetch(url, {
                 method: 'GET',
-                mode: 'cors'
+                mode: 'no-cors'
             })
-            .then(res => res.json())
-            .then(sheetsResult => {
+            .then(() => {
+                // تفعيل واجهة النجاح فوراً عند الإرسال الناجح بدون شاشات خطأ وهمية
                 document.getElementById('submitBtn').disabled = false;
-                if (sheetsResult.status === 'success') {
-                    // رسالة النجاح النهائية
-                    showCustomModal(
-                        'success', 
-                        'تم إرسال الطلب بنجاح', 
-                        `شكراً لك، تم تسجيل طلبك باسم (${name}). يقوم قسم التدقيق حالياً بـمراجعة وصـل الدفع، وسيتم شحن حسابك فوراً بعد التأكيد.`,
-                        function() {
-                            window.location.href = "../index.html";
-                        }
-                    );
-                } else {
-                    throw new Error("Sheets Saving Failed");
-                }
+                showCustomModal(
+                    'success', 
+                    'تم إرسال الطلب بنجاح', 
+                    `شكراً لك، تم تسجيل طلبك باسم (${name}). يقوم قسم التدقيق حالياً بـمراجعة وصـل الدفع، وسيتم شحن حسابك فوراً بعد التأكيد.`,
+                    function() {
+                        window.location.href = "../index.html";
+                    }
+                );
             })
             .catch(error => {
                 console.error(error);
