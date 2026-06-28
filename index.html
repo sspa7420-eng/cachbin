@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CachBin | بوابة الشحن المباشر</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Tajawal', sans-serif; }
+        input::-webkit-outer-spin-button,
+        input::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+            margin: 0;
+        }
+        input[type=number] {
+            -moz-appearance: textfield;
+        }
+        select {
+            -webkit-appearance: none;
+            -moz-appearance: none;
+            appearance: none;
+        }
+        .platform-card {
+            position: relative;
+        }
+        .verified-badge {
+            position: absolute;
+            top: -8px;
+            left: -8px;
+            background: white;
+            border-radius: 50%;
+            padding: 2px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            z-index: 20;
+        }
+    </style>
+</head>
+<body class="bg-[#f8f9fd] text-slate-800 antialiased">
+
+    <header class="container mx-auto px-6 py-6 flex justify-between items-center max-w-xl">
+        <span class="bg-[#0f172a] text-white text-sm px-5 py-2.5 rounded-full font-bold shadow-sm">
+            وكيل شحن
+        </span>
+        <div class="text-3xl font-black tracking-tight text-[#1e3a8a]">
+            Cach<span class="text-amber-500">Bin</span>
+        </div>
+    </header>
+
+    <div class="text-center mt-6 mb-8 px-4">
+        <h1 class="text-3xl font-black text-slate-900 tracking-tight mb-2 sm:text-4xl">بوابة الشحن المباشر</h1>
+        <p class="text-sm text-slate-500 font-bold">نظام معالجة فوري وآمن</p>
+    </div>
+
+    <main class="container mx-auto px-4 max-w-xl pb-16">
+        <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100/90 p-6 md:p-10">
+            
+            <form id="mainChargeForm" class="space-y-8">
+                
+                <div>
+                    <label class="block text-xs font-black text-slate-400 uppercase tracking-wider px-1 mb-3">إختر منصة الشحن أو العملة الرقمية</label>
+                    <div class="grid grid-cols-2 gap-4" id="platformGrid">
+                        
+                        <div data-platform="Binance" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/4Rrmnk6j/Binance.png" alt="Binance" class="h-10 w-auto object-contain pointer-events-none rounded-xl">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Binance</span>
+                        </div>
+
+                        <div data-platform="Exness" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/DfpJ2cLr/Exness.png" alt="Exness" class="h-10 w-auto object-contain pointer-events-none rounded-xl">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Exness</span>
+                        </div>
+
+                        <div data-platform="Bybit" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/r2qXLjmB/Bybit.png" alt="Bybit" class="h-10 w-auto object-contain pointer-events-none rounded-xl">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Bybit</span>
+                        </div>
+
+                        <div data-platform="JustMarkets" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/QvPqxp8N/Just-Markets.png" alt="JustMarkets" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">JustMarkets</span>
+                        </div>
+
+                        <div data-platform="PayPal" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/TxRDbXT7/IMG-7763.png" alt="PayPal" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">PayPal</span>
+                        </div>
+
+                        <div data-platform="RedotPay" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/rfMZyS2V/IMG-7774.png" alt="RedotPay" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">RedotPay</span>
+                        </div>
+
+                        <div data-platform="Skrill" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/6cqBvHst/IMG-7767.png" alt="Skrill" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Skrill</span>
+                        </div>
+
+                        <div data-platform="Wise" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/Wv7ktbsp/IMG-7768.png" alt="Wise" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Wise</span>
+                        </div>
+
+                        <div data-platform="Payoneer" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/LdJtz59p/IMG-7769.png" alt="Payoneer" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Payoneer</span>
+                        </div>
+
+                        <div data-platform="Volet Advcash" class="platform-card border-2 border-slate-100 bg-white rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:shadow-md flex flex-col items-center justify-center gap-3 h-32">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <img src="https://i.ibb.co/N2BGjnzY/IMG-7772.png" alt="Volet Advcash" class="h-10 w-auto object-contain pointer-events-none">
+                            <span class="text-sm font-black tracking-wider text-slate-700 uppercase">Volet Advcash</span>
+                        </div>
+
+                        <div id="cryptoSelectorCard" class="col-span-2 border-2 border-dashed border-slate-200 bg-slate-50/50 rounded-2xl p-5 text-center cursor-pointer transition-all duration-200 hover:bg-slate-50 flex flex-col items-center justify-center gap-3 h-32 relative">
+                            <div class="verified-badge hidden"><i class="fas fa-badge-check text-blue-500 text-xl"></i></div>
+                            <div id="cryptoSelectorContainer" class="flex flex-col items-center justify-center gap-2 w-full">
+                                <div class="flex items-center gap-3">
+                                    <div class="w-10 h-10 bg-gradient-to-tr from-amber-500 to-yellow-400 rounded-full flex items-center justify-center text-white shadow-sm">
+                                        <i class="fas fa-coins text-lg"></i>
+                                    </div>
+                                    <div class="text-right">
+                                        <span id="selectedCryptoTitle" class="block text-base font-black text-slate-800">باقي العملات الرقمية</span>
+                                        <span id="selectedCryptoSub" class="block text-xs font-bold text-slate-400">إضغط هنا لإختيار عملة أخرى</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <select id="cryptoHiddenSelect" class="absolute inset-0 opacity-0 w-full h-full cursor-pointer z-10">
+                                <option value="" disabled selected>إختر العملة من هنا...</option>
+                                <option value="XRP" data-img="https://i.ibb.co/PzQxvB3c/XRP.png">XRP</option>
+                                <option value="TRON" data-img="https://i.ibb.co/jvYvwN44/TRON.png">TRON</option>
+                                <option value="TONCOIN" data-img="https://i.ibb.co/v6tJGznS/TONCOIN.png">TONCOIN</option>
+                                <option value="DOGECOIN" data-img="https://i.ibb.co/zWSTsKcg/DOGECOIN.png">DOGE COIN</option>
+                                <option value="SHIBA INU" data-img="https://i.ibb.co/tp54hCL0/SHIBA-INU.png">SHIBA INU</option>
+                                <option value="BNB" data-img="https://i.ibb.co/WvXKnBsn/BNB.png">BNB</option>
+                                <option value="SOLANA" data-img="https://i.ibb.co/F4qLCDhL/SOLANA.png">SOLANA</option>
+                                <option value="TETHER" data-img="https://i.ibb.co/Zp5fcKL1/TETHER.png">TETHER</option>
+                            </select>
+                        </div>
+
+                    </div>
+                </div>
+
+                <div class="space-y-2.5">
+                    <label id="accountLabel" class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">Your Binance ID Wallet</label>
+                    <input type="text" id="accountInput" required class="block w-full px-4 py-4 bg-[#f8f9fd] border-2 border-transparent rounded-2xl text-slate-800 font-bold text-[13px] md:text-sm focus:bg-white focus:border-slate-900 focus:ring-0 transition placeholder:text-slate-400 leading-relaxed" placeholder="إدخل محفظتك التي تريد إستقبال النقود فيها">
+                </div>
+
+                <div class="space-y-2.5">
+                    <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">المبلغ المطلوب (MAD)</label>
+                    <div class="relative bg-[#f8f9fd] rounded-2xl border-2 border-transparent focus-within:bg-white focus-within:border-slate-900 transition flex items-center pr-5">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0 pointer-events-none">
+                            <i class="fas fa-money-bill-wave text-base"></i>
+                        </div>
+                        <input type="number" id="amountInput" step="any" required class="block w-full pl-5 pr-4 py-5 bg-transparent border-0 text-slate-900 font-black text-3xl text-left focus:ring-0 placeholder:text-slate-300" placeholder="0.00">
+                    </div>
+                </div>
+
+                <div class="pt-2">
+                    <button type="submit" class="w-full bg-gradient-to-r from-slate-900 to-slate-800 hover:from-slate-800 hover:to-slate-700 text-white font-black py-5 px-6 rounded-2xl transition-all duration-300 shadow-2xl hover:shadow-xl text-lg tracking-wide flex items-center justify-center gap-2 transform active:scale-[0.99]">
+                        <span>إرسال طلب الشحن</span>
+                    </button>
+                </div>
+
+            </form>
+        </div>
+    </main>
+
+    <script>
+        let selectedPlatform = "Binance";
+        let selectedImgSrc = "https://i.ibb.co/4Rrmnk6j/Binance.png"; // الصورة الافتراضية لـ Binance
+
+        const cards = document.querySelectorAll('.platform-card');
+        const cryptoSelectorCard = document.getElementById('cryptoSelectorCard');
+        const cryptoHiddenSelect = document.getElementById('cryptoHiddenSelect');
+        const selectedCryptoTitle = document.getElementById('selectedCryptoTitle');
+        const selectedCryptoSub = document.getElementById('selectedCryptoSub');
+        const cryptoSelectorContainer = document.getElementById('cryptoSelectorContainer');
+        const accountLabel = document.getElementById('accountLabel');
+        const accountInput = document.getElementById('accountInput');
+        const amountInput = document.getElementById('amountInput');
+
+        function updateFormLabels(platformName) {
+            document.querySelectorAll('.verified-badge').forEach(b => b.classList.add('hidden'));
+
+            const selectedCard = document.querySelector(`[data-platform="${platformName}"]`);
+            if (selectedCard) {
+                selectedCard.querySelector('.verified-badge').classList.remove('hidden');
+            } else if (platformName !== "Binance" && platformName !== "Exness" && platformName !== "Bybit" && platformName !== "JustMarkets" && platformName !== "PayPal" && platformName !== "RedotPay" && platformName !== "Skrill" && platformName !== "Wise" && platformName !== "Payoneer" && platformName !== "Volet Advcash" && platformName !== "") {
+                cryptoSelectorCard.querySelector('.verified-badge').classList.remove('hidden');
+            }
+
+            if (platformName === "TRON") {
+                accountLabel.innerText = "Your Tron Wallet";
+            } else if (platformName === "TETHER") {
+                accountLabel.innerText = "Your Tether (USDT) TRC 20 Wallet";
+            } else if (platformName === "Binance") {
+                accountLabel.innerText = "Your Binance ID Wallet";
+            } else if (platformName === "Bybit") {
+                accountLabel.innerText = "Your Bybit ID Wallet";
+            } else if (platformName === "Exness") {
+                accountLabel.innerText = "WALLET ADDRESS EXNESS (USDT) TRC20";
+            } else if (platformName === "JustMarkets") {
+                accountLabel.innerText = "WALLET ADDRESS JUSTMARKETS (USDT) TRC20";
+            } else if (platformName === "DOGECOIN") {
+                accountLabel.innerText = "Your Dogecoin Wallet";
+            } else if (platformName === "TONCOIN") {
+                accountLabel.innerText = "Your Toncoin Wallet";
+            } else if (platformName === "BNB") {
+                accountLabel.innerText = "Your Binance Coin (BNB) Wallet";
+            } else if (platformName === "SHIBA INU") {
+                accountLabel.innerText = "Your Shiba (BEP20) Wallet";
+            } else if (platformName === "XRP") {
+                accountLabel.innerText = "Your XRP Wallet";
+            } else if (platformName === "SOLANA") {
+                accountLabel.innerText = "Your Solana Wallet";
+            } else if (platformName === "PayPal") {
+                accountLabel.innerText = "Your PayPal Email";
+            } else if (platformName === "RedotPay") {
+                accountLabel.innerText = "Your RedotPay Account ID";
+            } else if (platformName === "Skrill") {
+                accountLabel.innerText = "Your Skrill Email";
+            } else if (platformName === "Wise") {
+                accountLabel.innerText = "Your Wise Email / ID";
+            } else if (platformName === "Payoneer") {
+                accountLabel.innerText = "Your Payoneer Email";
+            } else if (platformName === "Volet Advcash") {
+                accountLabel.innerText = "Your Volet Advcash Wallet ID";
+            } else {
+                accountLabel.innerText = `WALLET ADDRESS ${platformName}`;
+            }
+            accountInput.placeholder = "إدخل بياناتك التي تريد إستقبال النقود فيها";
+        }
+
+        cards.forEach(card => {
+            if(card.getAttribute('data-platform') === selectedPlatform) {
+                card.classList.remove('border-slate-100');
+                card.classList.add('border-slate-900', 'shadow-md', 'bg-slate-50/30');
+                card.querySelector('.verified-badge').classList.remove('hidden');
+            }
+
+            card.addEventListener('click', () => {
+                cards.forEach(c => {
+                    c.classList.remove('border-slate-900', 'shadow-md', 'bg-slate-50/30');
+                    c.classList.add('border-slate-100');
+                });
+                cryptoSelectorCard.classList.remove('border-slate-900', 'bg-slate-50/80', 'shadow-md');
+                cryptoSelectorCard.classList.add('border-slate-200', 'bg-slate-50/50');
+                
+                cryptoHiddenSelect.value = "";
+                selectedCryptoTitle.innerText = "باقي العملات الرقمية";
+                selectedCryptoSub.innerText = "إضغط هنا لإختيار عملة أخرى";
+                cryptoSelectorContainer.innerHTML = `
+                    <div class="flex items-center gap-3">
+                        <div class="w-10 h-10 bg-gradient-to-tr from-amber-500 to-yellow-400 rounded-full flex items-center justify-center text-white shadow-sm">
+                            <i class="fas fa-coins text-lg"></i>
+                        </div>
+                        <div class="text-right">
+                            <span id="selectedCryptoTitle" class="block text-base font-black text-slate-800">باقي العملات الرقمية</span>
+                            <span id="selectedCryptoSub" class="block text-xs font-bold text-slate-400">إضغط هنا لإختيار عملة أخرى</span>
+                        </div>
+                    </div>
+                `;
+
+                card.classList.remove('border-slate-100');
+                card.classList.add('border-slate-900', 'shadow-md', 'bg-slate-50/30');
+                selectedPlatform = card.getAttribute('data-platform');
+                selectedImgSrc = card.querySelector('img').getAttribute('src'); // حفظ رابط الصورة
+                updateFormLabels(selectedPlatform);
+            });
+        });
+
+        cryptoHiddenSelect.addEventListener('change', function() {
+            cards.forEach(c => {
+                c.classList.remove('border-slate-900', 'shadow-md', 'bg-slate-50/30');
+                c.classList.add('border-slate-100');
+            });
+
+            cryptoSelectorCard.classList.remove('border-slate-200', 'bg-slate-50/50');
+            cryptoSelectorCard.classList.add('border-slate-900', 'bg-slate-50/80', 'shadow-md');
+
+            const selectedOption = this.options[this.selectedIndex];
+            const cryptoName = selectedOption.value;
+            const cryptoImgSrc = selectedOption.getAttribute('data-img');
+            const cryptoText = selectedOption.text;
+
+            selectedPlatform = cryptoName;
+            selectedImgSrc = cryptoImgSrc; // حفظ رابط صورة العملة المحددة
+            updateFormLabels(selectedPlatform);
+
+            cryptoSelectorContainer.innerHTML = `
+                <div class="flex items-center gap-3 animate-fade-in">
+                    <img src="${cryptoImgSrc}" alt="${cryptoText}" class="h-11 w-auto object-contain pointer-events-none rounded-xl shadow-sm">
+                    <div class="text-right">
+                        <span class="block text-base font-black text-slate-900 uppercase">${cryptoText}</span>
+                        <span class="block text-xs font-bold text-emerald-600">تم الإختيار بنجاح</span>
+                    </div>
+                </div>
+            `;
+        });
+
+        const mainForm = document.getElementById('mainChargeForm');
+
+        mainForm.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // تجميع الداتا وتجهيز الرابط
+            const amount = parseFloat(amountInput.value || 0).toFixed(2);
+            const account = encodeURIComponent(accountInput.value);
+            const platform = encodeURIComponent(selectedPlatform);
+            const image = encodeURIComponent(selectedImgSrc);
+
+            // تحويل الزائر مع صيفط المعلومات كاملين ف الرابط لصفحة w/peyememethode
+            window.location.href = `w/peyememethode.html?platform=${platform}&amount=${amount}&account=${account}&img=${image}`;
+        });
+    </script>
+</body>
+</html>
