@@ -3,7 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CachBin | بوابة الشحن المباشر</title>
+    
+    <title>cachbin.com: شحن محفظتك الرقمية ببساطة من بنكك المغربي.</title>
+    
+    <meta name="description" content="واش كتقلب على أسرع وأسهل طريقة تشحن بها محفظتك الرقمية؟ cachbin.com هنا باش يتهنى ليك البال. وفرنا ليك خدمة مغربية 100% كتخليك تحول الأموال من البنك ديالك (CIH، التجاري، الشعبي، وغيرها) للرصيد اللي محتاج في دقايق. اختاريتينا حيت حنا كنفهمو الحاجة ديالك للسرعة، الثقة، والتعامل البسيط اللي كيناسب البنوك اللي كتستعمل يومياً. جرب السهولة ديالنا دابا!">
+    
+    <link rel="icon" type="image/png" href="favicon.png">
+    
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -184,7 +190,7 @@
 
     <script>
         let selectedPlatform = "Binance";
-        let selectedImgSrc = "https://i.ibb.co/4Rrmnk6j/Binance.png"; // الصورة الافتراضية لـ Binance
+        let selectedImgSrc = "https://i.ibb.co/4Rrmnk6j/Binance.png"; 
 
         const cards = document.querySelectorAll('.platform-card');
         const cryptoSelectorCard = document.getElementById('cryptoSelectorCard');
@@ -281,7 +287,7 @@
                 card.classList.remove('border-slate-100');
                 card.classList.add('border-slate-900', 'shadow-md', 'bg-slate-50/30');
                 selectedPlatform = card.getAttribute('data-platform');
-                selectedImgSrc = card.querySelector('img').getAttribute('src'); // حفظ رابط الصورة
+                selectedImgSrc = card.querySelector('img').getAttribute('src'); 
                 updateFormLabels(selectedPlatform);
             });
         });
@@ -301,7 +307,7 @@
             const cryptoText = selectedOption.text;
 
             selectedPlatform = cryptoName;
-            selectedImgSrc = cryptoImgSrc; // حفظ رابط صورة العملة المحددة
+            selectedImgSrc = cryptoImgSrc; 
             updateFormLabels(selectedPlatform);
 
             cryptoSelectorContainer.innerHTML = `
@@ -320,13 +326,11 @@
         mainForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            // تجميع الداتا وتجهيز الرابط
             const amount = parseFloat(amountInput.value || 0).toFixed(2);
             const account = encodeURIComponent(accountInput.value);
             const platform = encodeURIComponent(selectedPlatform);
             const image = encodeURIComponent(selectedImgSrc);
 
-            // تحويل الزائر مع صيفط المعلومات كاملين ف الرابط لصفحة w/peyememethode
             window.location.href = `w/peyememethode.html?platform=${platform}&amount=${amount}&account=${account}&img=${image}`;
         });
     </script>
