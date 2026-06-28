@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="ar" dir="rtl"> 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -67,7 +67,7 @@
     <main class="container mx-auto px-4 max-w-xl pb-16">
         <div class="bg-white rounded-[2.5rem] shadow-xl border border-slate-100/90 p-6 md:p-10">
             
-            <form id="mainChargeForm" class="space-y-8">
+            <form id="mainChargeForm" class="space-y-8" novalidate>
                 
                 <div>
                     <label class="block text-xs font-black text-slate-400 uppercase tracking-wider px-1 mb-3">إختر منصة الشحن أو العملة الرقمية</label>
@@ -163,18 +163,28 @@
                     </div>
                 </div>
 
+                <div id="platformError" class="hidden text-red-500 text-xs font-bold px-1 -mt-4">
+                    <i class="fas fa-exclamation-circle ml-1"></i> المرجو تحديد منصة الشحن أولاً.
+                </div>
+
                 <div class="space-y-2.5">
                     <label id="accountLabel" class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">Your Binance ID Wallet</label>
-                    <input type="text" id="accountInput" required class="block w-full px-4 py-4 bg-[#f8f9fd] border-2 border-transparent rounded-2xl text-slate-800 font-bold text-[13px] md:text-sm focus:bg-white focus:border-slate-900 focus:ring-0 transition placeholder:text-slate-400 leading-relaxed" placeholder="إدخل محفظتك التي تريد إستقبال النقود فيها">
+                    <input type="text" id="accountInput" required class="block w-full px-4 py-4 bg-[#f8f9fd] border-2 border-transparent rounded-2xl text-slate-800 font-bold text-[13px] md:text-sm focus:bg-white focus:border-slate-300 outline-none transition placeholder:text-slate-400 leading-relaxed" placeholder="إدخل بياناتك التي تريد إستقبال النقود فيها">
+                    <div id="accountError" class="hidden text-red-500 text-xs font-bold px-1">
+                        <i class="fas fa-exclamation-circle ml-1"></i> هذا الحقل مطلوب، يرجى إدخال البيانات المخصصة للاستقبال.
+                    </div>
                 </div>
 
                 <div class="space-y-2.5">
                     <label class="block text-xs font-black text-slate-500 uppercase tracking-wider px-1">المبلغ المطلوب (MAD)</label>
-                    <div class="relative bg-[#f8f9fd] rounded-2xl border-2 border-transparent focus-within:bg-white focus-within:border-slate-900 transition flex items-center pr-5">
+                    <div class="relative bg-[#f8f9fd] rounded-2xl border-2 border-transparent focus-within:bg-white focus-within:border-slate-300 transition flex items-center pr-5">
                         <div class="w-10 h-10 bg-gradient-to-tr from-blue-600 to-indigo-500 rounded-xl flex items-center justify-center text-white shadow-md shadow-blue-500/20 shrink-0 pointer-events-none">
                             <i class="fas fa-money-bill-wave text-base"></i>
                         </div>
-                        <input type="number" id="amountInput" step="any" required class="block w-full pl-5 pr-4 py-5 bg-transparent border-0 text-slate-900 font-black text-3xl text-left focus:ring-0 placeholder:text-slate-300" placeholder="0.00">
+                        <input type="number" id="amountInput" step="any" required class="block w-full pl-5 pr-4 py-5 bg-transparent border-0 text-slate-900 font-black text-3xl text-left focus:ring-0 outline-none placeholder:text-slate-300" placeholder="0.00">
+                    </div>
+                    <div id="amountError" class="hidden text-red-500 text-xs font-bold px-1">
+                        <i class="fas fa-exclamation-circle ml-1"></i> يرجى إدخال مبلغ شحن صحيح ومقبول.
                     </div>
                 </div>
 
@@ -186,6 +196,47 @@
 
             </form>
         </div>
+
+        <div class="mt-12 bg-white rounded-[2rem] shadow-lg border border-slate-100/90 p-6">
+            <h3 class="text-lg font-black text-slate-900 mb-6 flex items-center gap-2">
+                <i class="fas fa-star text-amber-500"></i>
+                <span>ماذا يقول عملاؤنا؟</span>
+            </h3>
+            <div class="space-y-4">
+                <div class="border-b border-slate-50 pb-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-bold text-slate-800">Amine Morabit</span>
+                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">أفضل منصة لشحن حساب باينانس في المغرب، المعالجة سريعة جداً والدعم الفني متعاون للغاية.</p>
+                </div>
+                <div class="border-b border-slate-50 pb-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-bold text-slate-800">Yassine Tazi</span>
+                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">شحنت حساب إكسنس الخاص بي في أقل من 10 دقائق عبر تحويل CIH. خدمة ممتازة وثقة عمياء.</p>
+                </div>
+                <div class="border-b border-slate-50 pb-4">
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-bold text-slate-800">Sara Bennani</span>
+                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">كنت أواجه مشكلة في شحن بطاقة ريدوت باي بسبب الليميت البنكي، لكن الموقع حل لي المشكلة ببساطة.</p>
+                </div>
+                <div>
+                    <div class="flex justify-between items-center mb-1">
+                        <span class="text-sm font-bold text-slate-800">Adil Mansour</span>
+                        <div class="text-amber-400 text-xs"><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i></div>
+                    </div>
+                    <p class="text-xs text-slate-500 font-medium">سرعة في التنفيد ومصداقية تامة، تعاملت معاهم كذا مرة لشحن حساب Bybit وديما الخدمة في المستوى.</p>
+                </div>
+            </div>
+        </div>
+
+        <footer class="mt-12 text-center">
+            <p class="text-xs font-black text-slate-400 tracking-wide uppercase">أحسن شركة شحن منصات في المغرب لعام 2026</p>
+        </footer>
     </main>
 
     <script>
@@ -201,6 +252,11 @@
         const accountLabel = document.getElementById('accountLabel');
         const accountInput = document.getElementById('accountInput');
         const amountInput = document.getElementById('amountInput');
+
+        // عناصر رسائل الخطأ للـ Validation
+        const platformError = document.getElementById('platformError');
+        const accountError = document.getElementById('accountError');
+        const amountError = document.getElementById('amountError');
 
         function updateFormLabels(platformName) {
             document.querySelectorAll('.verified-badge').forEach(b => b.classList.add('hidden'));
@@ -262,6 +318,9 @@
             }
 
             card.addEventListener('click', () => {
+                // إخفاء رسالة خطأ المنصة عند الاختيار
+                platformError.classList.add('hidden');
+
                 cards.forEach(c => {
                     c.classList.remove('border-slate-900', 'shadow-md', 'bg-slate-50/30');
                     c.classList.add('border-slate-100');
@@ -293,6 +352,8 @@
         });
 
         cryptoHiddenSelect.addEventListener('change', function() {
+            platformError.classList.add('hidden');
+            
             cards.forEach(c => {
                 c.classList.remove('border-slate-900', 'shadow-md', 'bg-slate-50/30');
                 c.classList.add('border-slate-100');
@@ -321,12 +382,50 @@
             `;
         });
 
+        // مراقبة المدخلات لإخفاء الأخطاء مباشرة عند الكتابة
+        accountInput.addEventListener('input', () => {
+            if (accountInput.value.trim() !== "") accountError.classList.add('hidden');
+        });
+        amountInput.addEventListener('input', () => {
+            if (amountInput.value && parseFloat(amountInput.value) > 0) amountError.classList.add('hidden');
+        });
+
         const mainForm = document.getElementById('mainChargeForm');
 
         mainForm.addEventListener('submit', function(e) {
             e.preventDefault();
             
-            const amount = parseFloat(amountInput.value || 0).toFixed(2);
+            let isValid = true;
+
+            // التأكد من اختيار منصة
+            if (!selectedPlatform) {
+                platformError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                platformError.classList.add('hidden');
+            }
+
+            // التأكد من ملء حقل المحفظة / الحساب
+            if (accountInput.value.trim() === "") {
+                accountError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                accountError.classList.add('hidden');
+            }
+
+            // التأكد من صحة المبلغ المطلوب
+            const parsedAmount = parseFloat(amountInput.value || 0);
+            if (isNaN(parsedAmount) || parsedAmount <= 0) {
+                amountError.classList.remove('hidden');
+                isValid = false;
+            } else {
+                amountError.classList.add('hidden');
+            }
+
+            // إذا وجد خطأ، نوقف الإرسال
+            if (!isValid) return;
+
+            const amount = parsedAmount.toFixed(2);
             const account = encodeURIComponent(accountInput.value);
             const platform = encodeURIComponent(selectedPlatform);
             const image = encodeURIComponent(selectedImgSrc);
