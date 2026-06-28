@@ -18,11 +18,8 @@
     <style>
         body { 
             font-family: 'Tajawal', sans-serif; 
-            /* تم وضع رابط صورتك هنا مباشرة لتكون خلفية للموقع كامل */
-            background-image: linear-gradient(rgba(248, 249, 253, 0.92), rgba(248, 249, 253, 0.92)), url('https://i.ibb.co/fdb6ZrF8/Screenshot-20260628-062041.jpg');
-            background-size: cover;
-            background-position: center;
-            background-attachment: fixed;
+            background: linear-gradient(rgba(248, 249, 253, 0.92), rgba(248, 249, 253, 0.92)), url('https://i.ibb.co/fdb6ZrF8/Screenshot-20260628-062041.jpg') no-repeat center center fixed !important;
+            background-size: cover !important;
         }
         input::-webkit-outer-spin-button,
         input::-webkit-inner-spin-button {
@@ -55,7 +52,7 @@
         }
     </style>
 </head>
-<body class="text-slate-800 antialiased">
+<body class="antialiased">
 
     <header class="container mx-auto px-6 py-6 flex justify-between items-center max-w-xl">
         <span class="bg-[#0f172a] text-white text-sm px-5 py-2.5 rounded-full font-bold shadow-sm">
